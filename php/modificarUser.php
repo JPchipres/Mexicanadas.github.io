@@ -1,5 +1,6 @@
 <?php
 # Nota: no estamos haciendo validaciones
+$id = $_POST["id"];
 $email = $_POST["mail"];
 $name = $_POST["name"];
 $password = $_POST["pass"];
@@ -24,12 +25,12 @@ if ($existe) {
     exit; # Salir para no ejecutar el siguiente código
 }
 # Si no existe, se ejecuta esta parte
-# Ahora intentamos registrarlo
-$registradoCorrectamente = registrarUsuario($email, $name, $password, $prv);
-if ($registradoCorrectamente) {
-    echo "Registrado correctamente. Ahora puedes iniciar sesión";
+#Modificar datos del usuario
+$modificadoCorrectamente = modificarUsuario($email, $name, $password, $id);
+if ($modificadoCorrectamente) {
+    echo "Modificado correctamente.";
     header('refresh:2;adminRegistro.php');
 } else {
-    echo "Error al registrarte. Intenta más tarde";
+    echo "Error al modificar datos. Intenta más tarde";
     header('refresh:2;adminRegistro.php');
 }

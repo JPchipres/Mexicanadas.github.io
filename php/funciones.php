@@ -142,11 +142,18 @@ function usuarioExiste($email)
 
 function registrarUsuario($email, $name, $password, $prv)
 {
-    # NUNCA guardes contraseñas en texto plano
     require '../php/config/database.php';
     $password = password_hash($password, PASSWORD_BCRYPT);
     $sentencia = $conn->prepare("INSERT INTO admins(email, autor, id_privileges, password) values(?, ?, ?, ?)");
     return $sentencia->execute([$email, $name, $prv, $password]);
+}
+function modificarUsuario($email, $name, $password, $id)
+{
+    require '../php/config/database.php';
+    $password = password_hash($password, PASSWORD_BCRYPT);
+    $sentencia = $conn->prepare("UPDATE admins SET email='".$email."', autor='".$name."', password='".$password."' WHERE id='".$id."'");
+    $sentencia -> BindParam(':id', $id);
+    return $sentencia->execute();
 }
 function comentar($name, $email, $comment, $id)
 {
@@ -161,3 +168,4 @@ function eliminarComentario($id)
     $sql -> BindParam(':id', $id);
     return $sql->execute();
 }
+

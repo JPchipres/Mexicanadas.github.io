@@ -2,7 +2,7 @@
 <?php
 if (isset($_POST['delete'])) { 
   $txtid=$_POST['txtid'];
-  $sentencia_borrar = $conn->prepare("DELETE * FROM admins WHERE id='".$txtid."'");
+  $sentencia_borrar = $conn->prepare("DELETE FROM admins WHERE id='".$txtid."'");
   $sentencia_borrar -> BindParam(':id', $txtid);
   $sentencia_borrar -> execute();  
 	if ($sentencia_borrar) {

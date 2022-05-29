@@ -2,7 +2,7 @@
 
     document.addEventListener("DOMContentLoaded", async () => {
         try {
-            const url = "http://localhost/WebBlogNoticias-Mexicanadas/php/registrarVisitas.php";
+            const url = "http://localhost/NewsWebBlog-Mexicanadas/php/registrarVisitas.php";
             const payload = {
                 pagina: document.title,
                 url: window.location.href,

@@ -1,5 +1,8 @@
 <?php
-session_start();
+require "../php/config/validarSesion.php"; 
+if (!isset($_SESSION['user_id'])) {
+    header('location: login.php');
+}
 
 require '../php/config/database.php';
 

@@ -1,5 +1,8 @@
 <?php
-require "../php/config/validarSesion.php";
+require "../php/config/validarSesion.php"; 
+if (!isset($_SESSION['user_id'])) {
+    header('location: login.php');
+}
 require '../php/config/database.php';
 $txtid=$_POST['txtid'];
 $numPosts = "SELECT * FROM post WHERE post.id='".$txtid."'";

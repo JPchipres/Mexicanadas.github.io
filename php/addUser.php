@@ -1,4 +1,7 @@
-<?php require "../php/config/validarSesion.php"?>
+<?php require "../php/config/validarSesion.php"; 
+if (!isset($_SESSION['user_id'])) {
+    header('location: login.php');
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

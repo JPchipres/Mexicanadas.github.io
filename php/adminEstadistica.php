@@ -1,4 +1,7 @@
-<?php require "../php/config/validarSesion.php"?>
+<?php require "../php/config/validarSesion.php"; 
+if (!isset($_SESSION['user_id'])) {
+    header('location: login.php');
+}?>
 <?php
 include_once "funciones.php";
 $hoy = fechaHoy();
@@ -28,6 +31,7 @@ $visitas = obtenerVisitasEnRango($inicio, $fin);
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.1/css/bulma.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link href="../assets/favicon.ico" rel="icon">
 </head>
 <body>  
     <!-- Sidebar  -->

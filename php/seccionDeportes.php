@@ -104,7 +104,7 @@ $idOtros= $consultaPosts->fetchAll(\PDO::FETCH_ASSOC);
 <?php }?>
 
 <script type="text/javascript" src="../js/menu.js"></script>
-<!--<script type="text/javascript" src="../js/visitas.js"></script> -->
+<script type="text/javascript" src="../js/visitas.js"></script>
 <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

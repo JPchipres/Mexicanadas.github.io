@@ -1,6 +1,8 @@
-<?php
+<?php require "../php/config/validarSesion.php"; 
+if (!isset($_SESSION['user_id'])) {
+    header('location: login.php');
+}
 require '../php/config/database.php';
-require "../php/config/validarSesion.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">

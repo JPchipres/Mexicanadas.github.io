@@ -1,4 +1,7 @@
-<?php require "../php/config/validarSesion.php"?>
+<?php require "../php/config/validarSesion.php"; 
+if (!isset($_SESSION['user_id'])) {
+    header('location: login.php');
+}?>
 <?php $txtid=$_POST['txtid'];
             $numPosts = "SELECT * FROM admins WHERE id='".$txtid."'";
             $consulta= $conn->query($numPosts);

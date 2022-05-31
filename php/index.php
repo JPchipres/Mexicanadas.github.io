@@ -41,7 +41,7 @@ require '../php/config/database.php';
             ?>
 
     <div class="container-lg mb-5 som">
-            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade bg-success" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -49,9 +49,9 @@ require '../php/config/database.php';
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="<?php echo substr($idNot['image'],0) ?>" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5><?php echo $idNot["title"]?></h5>
+              <img src="<?php echo substr($idNot['image'],0) ?>" class="d-md-block w-100" alt="...">
+              <div class="carousel-caption d-md-block d-sm-block p-2">
+                <h5 class="fs-1"><?php echo $idNot["title"]?></h5>
                 <p><?php echo $idNot["description"]?></p>
                 <div class="slider-btn">
                   <a href="articulo.php?id=<?= $idNot["id"]?>" class="btn btn-1">Ir a la noticia</a>
@@ -61,8 +61,8 @@ require '../php/config/database.php';
             <?php foreach ($idCrr as $carousel){?>
             <div class="carousel-item">
               <img src="<?php echo substr($carousel['image'],0) ?>" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5><?php echo $carousel["title"]?></h5>
+              <div class="carousel-caption  d-md-block d-sm-block p-2">
+                <h6><?php echo $carousel["title"]?></h5>
                 <p><?php echo $carousel["description"]?></p>
                 <div class="slider-btn">
                   <a href="articulo.php?id=<?= $carousel["id"]?>" class="btn btn-1">Ir a la noticia</a>

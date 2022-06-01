@@ -66,6 +66,7 @@ $idOtros= $consultaPosts->fetchAll(\PDO::FETCH_ASSOC);
 <div class="titleBar mt-3 mx-3">
 	<h2>Ultimas noticias</h2>
 </div>
+									<!-- Sección -->
 <div class="row mb-2 px-4">
   <?php foreach ($idPost as $allPost) { ?>
             <div class="col-sm-12 col-md-4 mb-4 px-4 som">

@@ -65,23 +65,22 @@ $idOtros= $consultaPosts->fetchAll(\PDO::FETCH_ASSOC);
 	<h2>Ultimas noticias</h2>
 </div>
 									<!-- Sección -->
-<div class="container-fluid">
-	<center>
-		<?php foreach($idPost as $allPost){?>
-            <div class="contenedor som grow2">
-              <div class="card" style="width: 18rem;">
+<div class="row mb-2 px-4">
+  <?php foreach ($idPost as $allPost) { ?>
+            <div class="col-sm-12 col-md-4 mb-4 px-4 som">
+              <center>
+              <div class="card " style="width: 16rem;">
               <img src="<?php echo substr($allPost['image'],0) ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $allPost['title'] ?></h5>
                 <p class="card-text"><?php echo $allPost['description'] ?></p>
-                <a href="articulo.php?id=<?= $allPost["id"]?>" class="btn btn-danger">Ir a la noticia</a>
+                <a href="articulo.php?id=<?= $allPost["id"]?>" class="btn btn-danger ">Ir a la noticia</a>
               </div>
             </div>
-          </div>
-
-            <?php }?>
-	</center>
-</div>
+              </center>
+            </div>
+            <?php } ?>
+        </div>
 </div>
 
 <div class="col-md-4">

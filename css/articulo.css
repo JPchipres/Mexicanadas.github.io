@@ -12,9 +12,9 @@ img{
   padding: 20px;
   background: #FFF;
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-  width: 500px;
-  min-height: 400px;
-  margin: 20px 0;
+  width: 98%;
+  min-height: 40%;
+  margin: 0;
 }
 
 .wrapper .row {
@@ -23,7 +23,7 @@ img{
 }
 
 .wrapper .form .row .input-group {
-  padding: 0 10px;
+  padding: 0 0;
   display: block;
 }
 

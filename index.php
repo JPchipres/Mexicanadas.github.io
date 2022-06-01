@@ -1,5 +1,5 @@
 <?php
-require '../php/config/database.php';
+require './php/config/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,10 +8,10 @@ require '../php/config/database.php';
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Mexicanadas: Inicio</title>
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link href="../assets/favicon.ico" rel="icon">
-	<link href="../css/indSeccStyle.css" rel="stylesheet">
-  <link href="../css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link href="./assets/favicon.ico" rel="icon">
+	<link href="./css/indSeccStyle.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap" rel="stylesheet">
@@ -54,7 +54,7 @@ require '../php/config/database.php';
                 <h5 class="fs-1"><?php echo $idNot["title"]?></h5>
                 <p><?php echo $idNot["description"]?></p>
                 <div class="slider-btn">
-                  <a href="articulo.php?id=<?= $idNot["id"]?>" class="btn btn-1">Ir a la noticia</a>
+                  <a href="./php/articulo.php?id=<?= $idNot["id"]?>" class="btn btn-1">Ir a la noticia</a>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ require '../php/config/database.php';
                 <h6><?php echo $carousel["title"]?></h5>
                 <p><?php echo $carousel["description"]?></p>
                 <div class="slider-btn">
-                  <a href="articulo.php?id=<?= $carousel["id"]?>" class="btn btn-1">Ir a la noticia</a>
+                  <a href="./php/articulo.php?id=<?= $carousel["id"]?>" class="btn btn-1">Ir a la noticia</a>
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@ require '../php/config/database.php';
                                 <div class="cn-img">
                                     <img src="<?php echo substr($PolId['image'],0) ?>" />
                                     <div class="cn-title">
-                                        <a href="articulo.php?id=<?= $PolId["id"]?>"><?php echo $PolId["title"]?></a>
+                                        <a href="./php/articulo.php?id=<?= $PolId["id"]?>"><?php echo $PolId["title"]?></a>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@ require '../php/config/database.php';
                                 <div class="cn-img">
                                     <img src="<?php echo substr($tecId['image'],0) ?>" />
                                     <div class="cn-title">
-                                      <a href="articulo.php?id=<?= $tecId["id"]?>"><?php echo $tecId["title"]?></a>
+                                      <a href="./php/articulo.php?id=<?= $tecId["id"]?>"><?php echo $tecId["title"]?></a>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@ require '../php/config/database.php';
                                 <div class="cn-img">
                                     <img src="<?php echo substr($DepId['image'],0) ?>" />
                                     <div class="cn-title">
-                                      <a href="articulo.php?id=<?= $DepId["id"]?>"><?php echo $DepId["title"]?></a>
+                                      <a href="./php/articulo.php?id=<?= $DepId["id"]?>"><?php echo $DepId["title"]?></a>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@ require '../php/config/database.php';
                                 <div class="cn-img">
                                     <img src="<?php echo substr($CultId['image'],0) ?>" />
                                     <div class="cn-title">
-                                      <a href="articulo.php?id=<?= $CultId["id"]?>"><?php echo $CultId["title"]?></a>
+                                      <a href="./php/articulo.php?id=<?= $CultId["id"]?>"><?php echo $CultId["title"]?></a>
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +185,7 @@ require '../php/config/database.php';
         <!-- Category News End-->
   
         <!-- Main News End-->
-<script type="text/javascript" src="../js/menu.js"></script>
-<script src="../js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="./js/menuIndex.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

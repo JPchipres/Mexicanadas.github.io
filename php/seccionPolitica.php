@@ -1,7 +1,7 @@
 <?php
 require '../php/config/database.php';
 /**Noticia de la categoria */
-$numPosts = "SELECT id, title, description, image, created_at FROM post WHERE category_id=1 AND status=1 ORDER BY id ASC limit 0,4 ";
+$numPosts = "SELECT id, title, description, image, created_at FROM post WHERE category_id=1 AND status=1 ORDER BY id ASC limit 0,6 ";
 $consulta= $conn->query($numPosts);
 $idPost= $consulta->fetchAll(\PDO::FETCH_ASSOC);
 /**Noticia principal */
@@ -9,7 +9,7 @@ $principalPost = "SELECT id, title, description, image, created_at FROM post WHE
 $consultaPrin= $conn->query($principalPost);
 $idPs= $consultaPrin->fetchAll(\PDO::FETCH_ASSOC);
 /**Otras noticias */
-$otrosPost = "SELECT id, title, description, image, created_at FROM post WHERE status=1  ORDER BY id ASC limit 0,1 ";
+$otrosPost = "SELECT id, title, description, image, created_at FROM post WHERE status=1  ORDER BY id ASC limit 0,2 ";
 $consultaPosts= $conn->query($otrosPost);
 $idOtros= $consultaPosts->fetchAll(\PDO::FETCH_ASSOC);
 
@@ -21,10 +21,11 @@ $idOtros= $consultaPosts->fetchAll(\PDO::FETCH_ASSOC);
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Mexicanadas: Cultura</title>
+	<title>Mexicanadas: politica</title>
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link href="../assets/favicon.ico" rel="icon">
 	<link href="../css/indSeccStyle.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
   
 </head>
 
@@ -65,24 +66,22 @@ $idOtros= $consultaPosts->fetchAll(\PDO::FETCH_ASSOC);
 <div class="titleBar mt-3 mx-3">
 	<h2>Ultimas noticias</h2>
 </div>
-									<!-- Sección -->
-<div class="container-fluid">
-	<center>
-		<?php foreach($idPost as $allPost){?>
-            <div class="contenedor som grow2">
-              <div class="card" style="width: 18rem;">
+<div class="row mb-2 px-4">
+  <?php foreach ($idPost as $allPost) { ?>
+            <div class="col-sm-12 col-md-4 mb-4 px-4 som">
+              <center>
+              <div class="card " style="width: 16rem;">
               <img src="<?php echo substr($allPost['image'],0) ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $allPost['title'] ?></h5>
                 <p class="card-text"><?php echo $allPost['description'] ?></p>
-                <a href="articulo.php?id=<?= $allPost["id"]?>" class="btn btn-danger">Ir a la noticia</a>
+                <a href="articulo.php?id=<?= $allPost["id"]?>" class="btn btn-danger ">Ir a la noticia</a>
               </div>
             </div>
-          </div>
-
-            <?php }?>
-	</center>
-</div>
+              </center>
+            </div>
+            <?php } ?>
+        </div>
 </div>
 
 <div class="col-md-4">
@@ -90,7 +89,7 @@ $idOtros= $consultaPosts->fetchAll(\PDO::FETCH_ASSOC);
 	<h2>Otras noticias</h2>
 </div>
 <?php foreach($idOtros as $otros){?>
-  <div class="contenedor2 gap-3 grow2">
+  <div class="contenedor2 som grow2">
     <center>
     <div class="card" style="width: 18rem;">
     <img src="<?php echo substr($otros['image'],0) ?>" class="card-img-top" alt="...">
@@ -102,6 +101,8 @@ $idOtros= $consultaPosts->fetchAll(\PDO::FETCH_ASSOC);
   </div>
     </center>
 </div>
+<br>
+
 <?php }?>
 
 <script type="text/javascript" src="../js/menu.js"></script>

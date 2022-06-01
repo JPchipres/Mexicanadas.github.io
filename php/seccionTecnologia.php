@@ -72,7 +72,7 @@ $idOtros1= $consultaPosts1->fetchAll(\PDO::FETCH_ASSOC);
 <div class="container-fluid">
 	<center>
 		<?php foreach($idPost as $allPost){?>
-            <div class="contenedor som grow2">
+            <div class="contenedor2 gap-3 som grow2">
               <div class="card" style="width: 18rem;">
               <img src="<?php echo substr($allPost['image'],0) ?>" class="card-img-top" alt="...">
               <div class="card-body">
@@ -93,7 +93,7 @@ $idOtros1= $consultaPosts1->fetchAll(\PDO::FETCH_ASSOC);
 	<h2>Otras noticias</h2>
 </div>
 <?php foreach($idOtros as $otros){?>
-  <div class="contenedor2 gap-3 grow2">
+  <div class="contenedor2 gap-3 som grow2">
     <center>
     <div class="card" style="width: 18rem;">
     <img src="<?php echo substr($otros['image'],0) ?>" class="card-img-top" alt="...">
